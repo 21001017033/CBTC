@@ -1,0 +1,80 @@
+#include <iostream>
+#include<string.h>
+#include<iomanip>
+using namespace std;
+
+class Student{
+   private://Data Hiding
+   int  rollno;
+   char name[20];
+   char gender;
+   int  age;
+   int std;
+   float marks;
+   public://Data Abstraction
+   void getData()//Member functions  input Mutator Functions
+   {
+    cout<<"Enter student Details\n";
+        
+    cout<<"Roll No.:";
+     cin>>rollno; 
+     cout<<"Name :";
+     cin>>name;
+     cout<<"Gender:";
+     cin>>gender;
+     cout<<"Age    :";
+     cin>>age;
+     cout<<"standard:";
+     cin>>std; 
+   }
+   void showData(){
+       cout<<"student Details\n";
+       cout<<"Roll No.:"<<rollno<<endl;
+       cout<<"Name   : " <<name<<endl;
+       cout<<"Gender:"<<gender<<endl;
+       cout<<"Age:"<<age<<endl;
+       cout<<"standard:"<<std<<endl;
+   }
+  void heading(){
+       cout.setf(ios::left);
+       cout<<setw(10)<<"Roll No.:";
+       cout<<setw(20)<<"Name";
+       cout<<setw(5)<<"std";
+       cout<<setw(10)<<"Gender";
+       cout<<setw(5)<<"Age";
+       cout<<setw(5)<<"std";
+       cout<<endl;
+   }
+   void listData()//Member functions output  Acessor Functions
+{
+     cout.setf(ios::left);
+      
+       cout<<setw(10)<<rollno;
+       cout<<setw(20)<<name;
+       cout<<setw(10)<<gender;
+       cout<<setw(5)<<age;
+       cout<<setw(5)<<std;
+       cout<<endl;
+      
+   }
+
+};
+int main()
+{
+    
+Student s[4];
+int i;
+for( i=0;i<4;i++){
+    cout<<"enter the Details for Record No.:"<<i+1<<endl;
+    s[i].getData();
+    
+}
+cout<<endl<<endl;
+s[0].heading();
+for(i=0;i<4;i++){
+    
+    s[i].listData();
+}
+    return 0;
+}
+
